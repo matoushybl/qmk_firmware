@@ -15,17 +15,18 @@ You should have received a copy of the GNU General Public License
 along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 
-#pragma once
+#ifndef CONFIG_USER_H
+#define CONFIG_USER_H
 
 #include "config_common.h"
 
-/* USB Device descriptor parameter */
-#define VENDOR_ID    0x4335 // GEEKhack
-#define PRODUCT_ID   0x0001
+#define VENDOR_ID    0xFEED
+#define PRODUCT_ID   0x6060
 #define DEVICE_VER   0x0001
 #define MANUFACTURER    geekhack
-#define PRODUCT         GH60 Rev C
+#define PRODUCT         GH60
 #define DESCRIPTION     t.m.k. keyboard firmware for GH60
+
 /* key matrix size */
 #define MATRIX_ROWS 5
 #define MATRIX_COLS 14
@@ -64,8 +65,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 /* Locking resynchronize hack */
 #define LOCKING_RESYNC_ENABLE
 
-#define COMBO_TERM 200
-#define COMBO_COUNT 4
+#define USB_MAX_POWER_CONSUMPTION 50
 
 /*
  * Force NKRO
@@ -153,3 +153,4 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 //#define NO_ACTION_ONESHOT
 //#define NO_ACTION_MACRO
 //#define NO_ACTION_FUNCTION
+#endif
