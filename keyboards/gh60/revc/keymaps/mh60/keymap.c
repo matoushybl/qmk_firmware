@@ -4,7 +4,7 @@
 // const uint16_t PROGMEM end_combo[] = {KC_LALT, KC_RGHT, COMBO_END};
 // const uint16_t PROGMEM pgup_combo[] = {KC_LALT, KC_UP, COMBO_END};
 // const uint16_t PROGMEM pgdown_combo[] = {KC_LALT, KC_DOWN, COMBO_END};
-// 
+//
 // combo_t key_combos[COMBO_COUNT] = {
 //     COMBO(home_combo, KC_HOME),
 //     COMBO(end_combo, KC_END),

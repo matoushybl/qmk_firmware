@@ -64,8 +64,10 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 /* Locking resynchronize hack */
 #define LOCKING_RESYNC_ENABLE
 
-#define COMBO_TERM 200
-#define COMBO_COUNT 4
+// #define COMBO_TERM 200
+// #define COMBO_COUNT 4
+
+#define USB_MAX_POWER_CONSUMPTION 100
 
 /*
  * Force NKRO
