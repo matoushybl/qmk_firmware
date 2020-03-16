@@ -27,10 +27,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [1] = LAYOUT_all( /* 1: fn */
         KC_ESC,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_DEL, _______,
-        _______, _______, KC_AUDIO_VOL_UP,   _______, _______, _______, _______, _______, _______, KC_MEDIA_PLAY_PAUSE, _______, _______, _______, _______,
-        _______, KC_MEDIA_PREV_TRACK, KC_AUDIO_VOL_DOWN, KC_MEDIA_NEXT_TRACK, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+        _______, _______, KC_AUDIO_VOL_UP,   _______, _______, _______, KC_WH_U, KC_WH_L, KC_MS_UP, KC_WH_R, KC_MEDIA_PLAY_PAUSE, _______, _______, _______,
+        _______, KC_MEDIA_PREV_TRACK, KC_AUDIO_VOL_DOWN, KC_MEDIA_NEXT_TRACK, _______, KC_INS, KC_WH_D, KC_MS_L, KC_MS_D, KC_MS_R, KC_BTN2, _______, _______, _______,
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_PGUP, _______,
-        _______, _______, _______,                   _______,                                     _______, KC_HOME, KC_PGDOWN, KC_END
+        _______, _______, _______,                   KC_BTN1,                                     _______, KC_HOME, KC_PGDOWN, KC_END
     ),
 
     [2] = LAYOUT_all( /* 2: arrows */
