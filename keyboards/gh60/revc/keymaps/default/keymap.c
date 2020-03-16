@@ -11,11 +11,14 @@
 //     COMBO(pgup_combo, KC_PGUP),
 //     COMBO(pgdown_combo, KC_PGDOWN)
 // };
+enum custom_keycodes {
+  KC_BSPCDEL = SAFE_RANGE
+};
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [0] = LAYOUT_all( /* 0: qwerty */
-        KC_GESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS, KC_EQL,  KC_BSPC, KC_GRV,
+        KC_GESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS, KC_EQL,  KC_BSPCDEL, KC_GRV,
         KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_LBRC, KC_RBRC, KC_BSLS,
         MO(1), KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT, KC_NO,   KC_ENT,
         KC_LSFT, TG(2),   KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_UP, MO(1),
@@ -39,6 +42,30 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
 };
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    static uint8_t saved_mods = 0;
+    switch (keycode) {
+        case KC_BSPCDEL:
+            if (record->event.pressed) {
+                if (get_mods() & MOD_MASK_SHIFT) {
+                    saved_mods = get_mods() & MOD_MASK_SHIFT;
+                    del_mods(saved_mods);
+                    register_code(KC_DEL);
+                } else {
+                    saved_mods = 0;
+                    register_code(KC_BSPC);
+                }
+            } else {
+                add_mods(saved_mods);
+                unregister_code(KC_DEL);
+                unregister_code(KC_BSPC);
+            }
+            return false;
+        default:
+            return true;
+    }
+}
 
 void keyboard_post_init_user(void) {
     gh60_esc_led_on();
