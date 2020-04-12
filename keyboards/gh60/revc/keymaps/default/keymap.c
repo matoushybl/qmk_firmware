@@ -1,5 +1,7 @@
 #include QMK_KEYBOARD_H
 
+#include "keymap_extras/keymap_german.h"
+
 // const uint16_t PROGMEM home_combo[] = {KC_LALT, KC_LEFT, COMBO_END};
 // const uint16_t PROGMEM end_combo[] = {KC_LALT, KC_RGHT, COMBO_END};
 // const uint16_t PROGMEM pgup_combo[] = {KC_LALT, KC_UP, COMBO_END};
@@ -24,7 +26,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [0] = LAYOUT_all( /* 0: qwerty */
         KC_GESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS, KC_EQL,  KC_BSPCDEL, KC_GRV,
-        KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_LBRC, KC_RBRC, KC_BSLS,
+        LT(3, KC_TAB),  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_LBRC, KC_RBRC, KC_BSLS,
         MO(1), KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT, KC_NO,   KC_ENT,
         KC_LSFT, TG(2),   KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT, MO(1),
         KC_LCTL, KC_LALT, KC_LGUI,                    KC_SPC,                                      KC_LEFT, KC_DOWN, KC_UP, KC_RGHT
@@ -44,7 +46,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
         _______, _______, _______,                   KC_BTN2,                                     _______, _______, _______, _______
     ),
-    [3] = LAYOUT_all( /* sleep layer */
+    [3] = LAYOUT_all( /* 1: czech shit */
+        _______,  LSFT(KC_F1),   CZ_ECAR,   LSFT(KC_F3),   LSFT(KC_F4),   LSFT(KC_F5),   LSFT(KC_F6),   LSFT(KC_F7),   LSFT(KC_F8),   LSFT(KC_F9),   LSFT(KC_F10),  LSFT(KC_F11),  LSFT(KC_F12),  KC_DEL, _______,
+        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+        _______, _______, _______, _______, _______, _______, KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R, _______, _______, _______, _______,
+        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+        _______, _______, _______,                   KC_BTN2,                                     _______, _______, _______, _______
+    ),
+    [4] = LAYOUT_all( /* sleep layer */
         KC_PWR,  KC_PWR,   KC_PWR,   KC_PWR,   KC_PWR,   KC_PWR,   KC_PWR,   KC_PWR,   KC_PWR,   KC_PWR,   KC_PWR,  KC_PWR,  KC_PWR,  KC_PWR, KC_PWR,
         KC_PWR, KC_PWR, KC_PWR,   KC_PWR, KC_PWR, KC_PWR, KC_PWR, KC_PWR, KC_PWR, KC_PWR, KC_PWR, KC_PWR, KC_PWR, KC_PWR,
         KC_PWR, KC_PWR, KC_PWR, KC_PWR, KC_PWR, KC_PWR, KC_PWR, KC_PWR, KC_PWR, KC_PWR, KC_PWR, KC_PWR, KC_PWR, KC_PWR,
