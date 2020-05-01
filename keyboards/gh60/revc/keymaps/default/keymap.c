@@ -1,7 +1,5 @@
 #include QMK_KEYBOARD_H
 
-#include "keymap_extras/keymap_german.h"
-
 // const uint16_t PROGMEM home_combo[] = {KC_LALT, KC_LEFT, COMBO_END};
 // const uint16_t PROGMEM end_combo[] = {KC_LALT, KC_RGHT, COMBO_END};
 // const uint16_t PROGMEM pgup_combo[] = {KC_LALT, KC_UP, COMBO_END};
@@ -19,7 +17,8 @@ enum custom_keycodes {
   KC_M_R,
   KC_M_U,
   KC_M_D,
-  KC_M_B
+  KC_M_B,
+  SSTEST
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -47,7 +46,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, _______, _______,                   KC_BTN2,                                     _______, _______, _______, _______
     ),
     [3] = LAYOUT_all( /* 1: czech shit */
-        _______,  LSFT(KC_F1),   CZ_ECAR,   LSFT(KC_F3),   LSFT(KC_F4),   LSFT(KC_F5),   LSFT(KC_F6),   LSFT(KC_F7),   LSFT(KC_F8),   LSFT(KC_F9),   LSFT(KC_F10),  LSFT(KC_F11),  LSFT(KC_F12),  KC_DEL, _______,
+        _______, _______, KC_INT7, _______, _______,   LSFT(KC_F5),   LSFT(KC_F6),   LSFT(KC_F7),   LSFT(KC_F8),   LSFT(KC_F9),   LSFT(KC_F10),  LSFT(KC_F11),  LSFT(KC_F12),  KC_DEL, _______,
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
         _______, _______, _______, _______, _______, _______, KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R, _______, _______, _______, _______,
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
@@ -81,6 +80,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 unregister_code(KC_BSPC);
             }
             return false;
+        case SSTEST:
+            SEND_STRING("é");
+            return true;
+        break;
         default:
             return true;
     }

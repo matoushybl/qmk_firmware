@@ -65,6 +65,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 /* Locking resynchronize hack */
 #define LOCKING_RESYNC_ENABLE
 
+#define USB_MAX_POWER_CONSUMPTION 100
+
+#define MOUSEKEY_DELAY 100
+#define MOUSEKEY_INTERVAL 25
+#define MOUSEKEY_MAX_SPEED 3
+#define MOUSEKEY_TIME_TO_MAX 30
+
 /*
  * Force NKRO
  *
